@@ -1,0 +1,274 @@
+/* Table of contents
+
+    Use (CMD/CRL + F $[SECTION] to quickly find what you are looking for [SECTION])
+
+
+1.  Variables
+2.  Main style
+
+3.  Top main
+4.  Header
+5.  Header content
+6.  Trigger down
+
+*/
+
+
+
+/* Import Normalize
+---------------------------------*/
+@import "normalize";
+
+
+
+/* $Variables
+--------------------------------*/
+$accentCol: #c29749;
+$mainFont: 'Open Sans', sans-serif;
+$secondFont: 'Yeseva One', sans-serif;
+$trEase: all .35s ease;
+
+
+
+
+
+/* $Main style
+--------------------------------*/
+body{
+  font-size: 12px;
+  font-family: $mainFont;
+}
+
+.content-wrap{
+  width: 1218px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+
+// btn
+.btn{
+  position: relative;
+  padding: 13px;
+  text-transform: uppercase;
+  border: solid 1px $accentCol;
+  border-bottom: transparent;
+  color: $accentCol;
+
+  .letter{
+    position: absolute;
+    left: 0;
+    bottom: -15px;
+    width: 100%;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-image: url("../img/z-letter.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    &:after,
+    &:before{
+      content: '';
+      display: inline-block;
+
+      width: 43%;
+      height: 1px;
+      background-color: $accentCol;
+    }
+    &:after{
+      float: right;
+    }
+  }
+}
+
+// Long arrow
+.long-arrow{
+  display: flex;
+  align-items: center;
+  &:after{
+    content: '';
+    width: 55px;
+    height: 9px;
+
+    background-image: url("../img/long-arrow_right.png");
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+
+/*  $Tom-main
+---------------------------------*/
+.tom-main{
+  position: relative;
+  font-weight: 600;
+  height: 704px;
+  letter-spacing: 3px;
+  background-image: url("../img/main_header.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
+
+/*  $Header
+---------------------------------*/
+header{
+  .top-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /*-- Logo --*/
+  .logo{
+    margin-right: 8px;
+    img{
+      max-width: 100%;
+      max-height: 105px;
+      margin-top: 18px;
+    }
+  }
+
+  /*-- Nav --*/
+  nav{
+    margin: 0 30px 7px 40px;
+    ul{
+      display: flex;
+    }
+    .link {
+      & + .link{
+        margin-left: 25px;
+      }
+      a{
+        position: relative;
+        text-transform: uppercase;
+        color: #fff;
+        &:before{
+          content: '';
+          position: absolute;
+          width: 100%;
+          left: 0;
+          bottom: -8px;
+          height: 2px;
+          background-color: $accentCol;
+          transform: scaleX(0);
+          transition: $trEase;
+        }
+        &:hover:before{
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+  /*-- Chang language --*/
+  .chang-lang{
+    margin-bottom: 7px;
+    display: flex;
+    .link{
+      margin: 0 4px;
+      a{
+        color: #fff;
+      }
+      &.active{
+        opacity: .4;
+        a{
+          pointer-events: none;
+        }
+      }
+    }
+  }
+  /*-- Fb btn --*/
+  .fb-btn{
+    margin-bottom: 7px;
+  }
+}
+
+/* $Header content
+  -----------------------------------------*/
+.tom-main{
+  .header-content{
+    position: absolute;
+    top: 48%;
+    padding-left: 8.5%;
+    .h2{
+      margin-bottom: 50px;
+      font-family: $secondFont;
+      font-size: 5.9rem;
+      color: #fff;
+    }
+    .link{
+      text-transform: uppercase;
+      color: $accentCol;
+    }
+  }
+}
+
+
+/* $Trigger down
+----------------------------------------*/
+.trigger-down{
+  position: absolute;
+  bottom: 25px;
+  width: 20px;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translateX(-50%);
+  font-size: 23px;
+  color: #fff;
+
+  .top-arrow,
+  .bottom-arrow{
+    width: 15px;
+    opacity: .6;
+  }
+  .center{
+    position: relative;
+    width: 22px;
+    height: 35px;
+    border: solid 2px rgba(250, 250, 250, 0.6);
+    border-radius: 15px;
+    .anim-elem{
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 6px;
+      background-color: #fff;
+      opacity: .6;
+
+      animation: mouse-wheel infinite .6s alternate ease-in-out;
+
+    }
+  }
+}
+
+/* Animation trigger
+----------------------------------------*/
+
+@-webkit-keyframes mouse-wheel
+{
+  0% {
+    opacity: 1;
+    transform: translate( -50%, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 14px);
+  }
+}
+
+
+/* $Import
+---------------------------------*/
+@import "mediaqueri";
+
+
