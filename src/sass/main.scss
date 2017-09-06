@@ -11,6 +11,11 @@
 5.  Header content
 6.  Trigger down
 
+7.  Main content
+8.  Dashboard-gallery
+9.  Main slider
+
+
 */
 
 
@@ -37,12 +42,14 @@ $trEase: all .35s ease;
 body{
   font-size: 12px;
   font-family: $mainFont;
+  overflow-x: hidden;
+
+  margin-bottom: 1000px;
 }
 
 .content-wrap{
   width: 1218px;
   margin: 0 auto;
-  overflow: hidden;
 }
 
 
@@ -99,6 +106,26 @@ body{
   }
 }
 
+// Content header
+.content-header{
+  font-family: $secondFont;
+  font-size: 3rem;
+  line-height: 1.25;
+}
+
+// Text
+.text{
+  font-size: 0.96rem;
+  font-family: $mainFont;
+  line-height: 2;
+}
+
+
+
+
+
+
+
 
 /*  $Tom-main
 ---------------------------------*/
@@ -106,12 +133,16 @@ body{
   position: relative;
   font-weight: 600;
   height: 704px;
+  margin-bottom: 60px;
   letter-spacing: 3px;
+  min-height: 100vh;
+
   background-image: url("../img/main_header.jpg");
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
 }
+
 
 /*  $Header
 ---------------------------------*/
@@ -267,8 +298,180 @@ header{
 }
 
 
+
+
+
+/* $Main content
+-------------------------------------------*/
+
+/*  $Dashboard-gallery
+----------------------------------------*/
+.dashboard-gallery{
+  .item{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 60px;
+    &:nth-child(odd){
+      .img{
+        margin-right: -8.5%;
+      }
+      .content{
+        padding: 75px 45px 75px 12.8%;
+      }
+    }
+    &:nth-child(even){
+      flex-direction: row-reverse;
+      .img{
+        margin-left: -8.5%;
+      }
+      .content{
+        padding: 75px 12.8% 75px 45px;
+      }
+    }
+  }
+  .img{
+    position: relative;
+    height: 400px;
+    width: 52%;
+    z-index: 2;
+
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+  }
+  .content{
+    width: 56.5%;
+    height: 515px;
+    border: solid 4px #f1f1f1;
+    .content-header{
+      position: relative;
+      margin-bottom: 60px;
+      &:before{
+        content: '';
+        position: absolute;
+        bottom: -28px;
+        left: 0;
+        width: 52px;
+        height: 2px;
+        background-color: $accentCol;
+      }
+    }
+  }
+  .with_us{
+    display: inline-block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: $accentCol;
+  }
+}
+
+
+/* $Main slider
+--------------------------*/
+.main-slider{
+  position: relative;
+  .item{
+    width: 100%;
+    height: 550px;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    .content-wrap{
+      display: flex;
+      height: 100%;
+      align-items: flex-end;
+      padding: 0 28% 282px 108px;
+    }
+    .content-header{
+      color: #fff;
+    }
+  }
+
+  .static-content{
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    .static-text{
+      margin-bottom: 125px;
+      padding-left: 108px;
+    }
+
+    .h2{
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      color: #fff;
+    }
+    .link{
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $accentCol;
+    }
+    .dots{
+      .slick-dots{
+        display: flex;
+      }
+      li{
+        background-color: #fff;
+        width: 25%;
+        height: 1px;
+        opacity: .4;
+        &.slick-active{
+          opacity: 1;
+        }
+        button{
+          display: none;
+        }
+      }
+    }
+    .progress-bar_list{
+      display: flex;
+      li{
+        width: 25%;
+        display: flex;
+        align-items: center;
+      }
+      .chart{
+        position: relative;
+        width: 50px;
+        height: 50px;
+      }
+      .number{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        color: #fff;
+      }
+      .text{
+        color: #fff;
+        opacity: .7;
+        transition: $trEase;
+      }
+      .chart.active + .text{
+        opacity: 1;
+      }
+    }
+  }
+}
+
+
+
+
+
+
 /* $Import
 ---------------------------------*/
 @import "mediaqueri";
+@import "../libs/slick.js/slick";
+
+
+
+
+
 
 
