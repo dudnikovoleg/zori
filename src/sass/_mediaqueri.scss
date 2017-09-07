@@ -2,17 +2,414 @@
 
     Use (CMD/CRL + F $[SECTION] to quickly find what you are looking for [SECTION])
 
- main page
-1.  Tom-main
+
+1.  1600px
+2.  1279px
+3.  767px
+
+
+
+!  1600px
+
+1. Main page
+
+
+!  1279px
+
+1.  Main Page
+
+
+!  767px
+
+1.  Main Page
+
+
 */
 
-@media all and (min-width: 1600px)  {
 
-  /* $Tom-main
+
+
+/*  min-width: $1600px
+---------------------------------*/
+/*---------------------------------*/
+@media all and (min-width: 1600px) {
+
+  /* $Main page
   -------------------------------------*/
-.tom-main{
-  height: 900px;
+  .tom-main {
+    min-height: 900px;
+  }
+
 }
+
+
+/*  min-width: $1279px
+---------------------------------*/
+/*---------------------------------*/
+@media all and (max-width: 1279px) {
+
+
+
+  /* $Main page
+ -------------------------------------*/
+  .content-wrap{
+    width: auto;
+    max-width: 1280px;
+    padding: 0 24px;
+  }
+
+  .tom-main {
+    min-height: 1024px;
+    margin-bottom: 70px;
+    .header-content {
+      padding: 0;
+    }
+  }
+
+  .mob-logo{
+    display: inline-block;
+    margin-top: 35px;
+    img{
+      width: 100px;
+    }
+  }
+  .menu-icon{
+    position: absolute;
+    right: 23px;
+    top: 48px;;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  // Header
+  header {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    min-height: 100vh;
+    right: -100%;
+    z-index: 2;
+    .closed-icon{
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      width: 30px;
+      height: 30px;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .logo{
+      align-self: end;
+    }
+    .top-menu {
+      flex-direction: column;
+    }
+    nav {
+      width: 100%;
+      border-bottom: solid 1px #f4f2ef;
+      text-align: center;
+      ul {
+        flex-direction: column;
+      }
+      .link {
+        margin-bottom: 30px;
+        & + .link {
+          margin-left: 0;
+        }
+        a {
+          color: #000;
+        }
+      }
+    }
+
+    .chang-lang{
+      .link{
+        a{
+          color: #000;
+        }
+      }
+    }
+  }
+
+
+  // Dashboard
+  .dashboard-gallery{
+    margin-bottom: 22px;
+    .item{
+      margin-bottom: 35px;
+      align-items: flex-start;
+      .img{
+        margin-top: 45px;
+        width: 50%;
+      }
+      &:nth-child(odd){
+        .img {
+          margin-right: -13.5%;
+        }
+        .content{
+          padding: 57px 60px 24px 17.5%;
+        }
+      }
+      &:nth-child(even){
+        .img {
+          margin-left: -13.5%;
+        }
+        .content{
+          padding: 57px 17.5% 24px  60px;
+        }
+      }
+    }
+    .content {
+      width: 63.5%;
+      .content-header {
+        font-size: 2.26rem;
+        line-height: 1.3;
+        &:before {
+        bottom: -32px;
+      }
+    }
+    }
+    .with_us{
+      margin-bottom: 18px;
+    }
+  }
+
+
+  // Main slider
+  .main-slider{
+    .item{
+      .content-wrap{
+        padding: 0 24px 282px 24px;
+      }
+    }
+    .static-content {
+      width: 100%;
+      .h2{
+        margin-left: 30px;
+      }
+      .static-text{
+        padding-left: 0;
+      }
+      .progress-bar_list {
+        .text {
+          display: none;
+        }
+      }
+      .dots {
+        padding: 0;
+      }
+      .progress-bar_list{
+        justify-content: center;
+        li{
+          width: 12%;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+
+  // Chart-questions
+  .chart-questions{
+    margin-bottom: 52px;
+    ul{
+      li{
+        width: 50%;
+       a{
+         padding: 35px 48px 15px 48px;
+       }
+      }
+    }
+  }
+
+  // Insta-photo
+  .insta-photo{
+    margin-bottom: 40px;
+    .content-header {
+      margin-bottom: 30px;
+      font-size: 2.25rem;
+    }
+    ul .insta-icon{
+      opacity: 1;
+    }
+  }
+
+  // Footer
+  footer{
+    padding: 0 24px;
+    .text{
+      line-height: 1.5;
+    }
+  }
+
+}
+
+
+
+
+
+/*  min-width: $767px
+---------------------------------*/
+/*---------------------------------*/
+@media all and (max-width: 767px) {
+
+  .mob-logo{
+    padding: 0 24px;
+  }
+
+  .content-wrap{
+    padding: 0;
+  }
+
+  // Header
+  .tom-main{
+    min-height: 570px;
+    margin-bottom: 40px;
+    .header-content{
+      padding: 0 24px;
+      .h2 {
+        margin-bottom: 40px;
+        font-size: 2.3rem;
+        line-height: 1.3;
+      }
+    }
+  }
+
+  // Dashboard-gallery
+  .dashboard-gallery{
+    margin-bottom: 0;
+    .item{
+      &:nth-child(odd){
+        .img{
+          margin-right: 0;
+        }
+        .content{
+          padding: 48px 0 0 0px;
+        }
+      }
+      &:nth-child(even){
+        .img{
+          margin-left: 0;
+        }
+        .content{
+          padding: 48px 0 0 0px;
+        }
+      }
+
+      .img{
+        width: 100%;
+        height: 205px;
+        margin-top: 0;
+      }
+      .content{
+        width: 100%;
+        margin: -20px 24px 0 24px;
+        min-height: auto;
+        background: #fff;
+        border: none;
+        z-index: 2;
+      }
+    }
+  }
+
+
+  // Main slider
+  .main-slider{
+    margin-bottom: 0;
+    .item{
+      .content-header{
+        line-height: 1.35;
+        font-size: 2.25rem;
+      }
+    }
+    .static-content{
+      padding: 0 24px;
+      .h2 {
+        margin-left: 0;
+        margin-bottom: 30px;
+        line-height: 1.68;
+        &:before {
+          position: static;
+          display: inline-block;
+          margin-right: 10px;
+        }
+      }
+      .static-text{
+        margin-bottom: 30px;
+      }
+      .progress-bar_list{
+        padding: 0 8px;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  // Chart-questions
+  .chart-questions{
+    ul{
+      margin-right: 0;
+      li {
+        width: 100%;
+        margin-left: 0;
+        border-right: none;
+        border-left: none;
+        a {
+          padding: 32px 24px 18px 24px;
+        }
+      }
+    }
+  }
+
+  //Insta-photo
+  .insta-photo{
+    ul{
+      justify-content: center;
+      li{
+        &:nth-child(n+3){
+          display: none;
+        }
+        & + li {
+          margin-left: 5px;
+        }
+      }
+      img{
+        width: 135px;
+        height: 135px;
+      }
+      .insta-icon{
+        i{
+
+        }
+      }
+    }
+  }
+
+  // Footer
+  footer{
+    padding: 23px 10px 40px 10px;
+    flex-direction: column;
+    text-align: center;
+    .copyrighted,
+    .social,
+    span{
+      width: 100%;
+      text-align: center;
+    }
+    .copyrighted{
+      margin-bottom: 7px;
+      order: 1;
+    }
+    .social{
+      order: 3;
+    }
+    span{
+      margin-bottom: 20px;
+      order: 2;
+    }
+  }
+
 
 }
 

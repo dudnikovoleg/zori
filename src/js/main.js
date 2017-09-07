@@ -5,19 +5,34 @@
 
 
 
-        /* Init Wow.js plugin
+        /* Init AOS.js plugin
         ---------------------------------*/
-        new WOW().init();
+
+
+        (function () {
+            AOS.init({
+                offset: 250,
+                duration: 500,
+                easing: 'ease-in-sine',
+                disable: function () {
+                    var maxWidth = 767;
+                    return window.innerWidth < maxWidth;
+                }
+            });
+
+        })();
+
+
 
 
         /* EasyPieChart plugin init
         -----------------------------------*/
         (function () {
 
-            var chart = $('.chart');
+             var chart = $('.chart');
 
             chart.easyPieChart({
-                size: 50,
+                size: 45,
                 animate: 5000,
                 lineCap: 'butt',
                 scaleColor: false,
@@ -60,7 +75,7 @@
         (function () {
             $('#mainSlider').slick({
                 infinite: true,
-                autoplay: true,
+                // autoplay: true,
                 dots: true,
                 arrows: false,
                 autoplaySpeed: 5000,
@@ -72,9 +87,7 @@
                 appendDots: $('.dots')
             });
 
-        })()
-
-
+        })();
 
 
     })

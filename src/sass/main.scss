@@ -14,6 +14,8 @@
 7.  Main content
 8.  Dashboard-gallery
 9.  Main slider
+10. Chart-questions
+11. $Insta-photo
 
 
 */
@@ -43,20 +45,20 @@ body{
   font-size: 12px;
   font-family: $mainFont;
   overflow-x: hidden;
-
-  margin-bottom: 1000px;
 }
 
 .content-wrap{
   width: 1218px;
   margin: 0 auto;
+  //overflow: hidden;
 }
 
 
 // btn
 .btn{
   position: relative;
-  padding: 13px;
+  display: inline-block;
+  padding: 12px;
   text-transform: uppercase;
   border: solid 1px $accentCol;
   border-bottom: transparent;
@@ -123,19 +125,16 @@ body{
 
 
 
-
-
-
-
 /*  $Tom-main
 ---------------------------------*/
 .tom-main{
   position: relative;
   font-weight: 600;
-  height: 704px;
+  min-height: 704px;
   margin-bottom: 60px;
   letter-spacing: 3px;
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
 
   background-image: url("../img/main_header.jpg");
   background-repeat: no-repeat;
@@ -143,7 +142,9 @@ body{
   background-size: cover;
 }
 
-
+.mob-logo{
+  display: none;
+}
 /*  $Header
 ---------------------------------*/
 header{
@@ -307,6 +308,7 @@ header{
 /*  $Dashboard-gallery
 ----------------------------------------*/
 .dashboard-gallery{
+  overflow: hidden;
   .item{
     display: flex;
     flex-wrap: wrap;
@@ -342,8 +344,9 @@ header{
   }
   .content{
     width: 56.5%;
-    height: 515px;
+    min-height: 515px;
     border: solid 4px #f1f1f1;
+    overflow: hidden;
     .content-header{
       position: relative;
       margin-bottom: 60px;
@@ -373,12 +376,15 @@ header{
 --------------------------*/
 .main-slider{
   position: relative;
+  margin-bottom: 60px;
+  overflow: hidden;
   .item{
     width: 100%;
     height: 550px;
 
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center;
     .content-wrap{
       display: flex;
       height: 100%;
@@ -393,25 +399,40 @@ header{
   .static-content{
     position: absolute;
     left: 50%;
-    bottom: 20px;
+    bottom: 32px;
     transform: translateX(-50%);
     .static-text{
-      margin-bottom: 125px;
+      margin-bottom: 65px;
       padding-left: 108px;
     }
 
     .h2{
+      position: relative;
+      margin-bottom: 35px;
       font-size: 1.5rem;
       font-weight: 600;
       letter-spacing: 1.4px;
       color: #fff;
+      &:before{
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        width: 22px;
+        height: 2px;
+        background-color: #fff;
+        vertical-align: middle;
+      }
     }
     .link{
       text-transform: uppercase;
       font-weight: 600;
+      letter-spacing: 3px;
       color: $accentCol;
     }
     .dots{
+      margin-bottom: 28px;
+      padding: 0 50px;
       .slick-dots{
         display: flex;
       }
@@ -430,6 +451,7 @@ header{
     }
     .progress-bar_list{
       display: flex;
+      padding: 0 50px;
       li{
         width: 25%;
         display: flex;
@@ -437,8 +459,8 @@ header{
       }
       .chart{
         position: relative;
-        width: 50px;
-        height: 50px;
+        width: 45px;
+        height: 45px;
       }
       .number{
         position: absolute;
@@ -451,6 +473,9 @@ header{
         color: #fff;
         opacity: .7;
         transition: $trEase;
+        padding: 0 35% 0 8px;
+        margin: 0;
+        line-height: 1.5;
       }
       .chart.active + .text{
         opacity: 1;
@@ -460,12 +485,138 @@ header{
 }
 
 
+/* $Chart-questions
+-----------------------------------*/
+.chart-questions{
+  margin-bottom: 68px;
+  ul{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -3px;
+    li{
+      text-align: center;
+      width: 33.33333%;
+      border: solid 1px #f4f2ef;
+      margin-left: -1px;
+      margin-bottom: -1px;
+      overflow: hidden;
+      &:hover{
+        border-color: $accentCol;
+        z-index: 9;
+        .content-header{
+          color: $accentCol;
+        }
+      }
+      a{
+        padding: 35px 60px 20px 60px;
+        display: block;
+        color: #202020;
+      }
+      .content-header   {
+        font-size: 1.5rem;
+      }
+      .text{
+        margin: 13px 0;
+      }
+    }
+  }
+}
 
 
 
 
-/* $Import
+/* $Insta-photo
 ---------------------------------*/
+.insta-photo{
+  margin-bottom: 48px;
+  text-align: center;
+  .content-header{
+    margin-bottom: 36px;
+  }
+  ul{
+    display: flex;
+    li{
+      position: relative;
+      & + li{
+        margin-left: 10px;
+      }
+      &:hover{
+      .insta-icon{
+        opacity: 1;
+      }
+    }
+    }
+    .insta-icon{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 70px;
+      height: 70px;
+      transform: translate(-50%,-50%);
+
+      background-color: #fff;
+      border-radius: 50px;
+      opacity: 0;
+      i{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+
+        font-size: 38px;
+        color: $accentCol;
+      }
+    }
+    img{
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+}
+
+
+/* $Footer
+---------------------------*/
+footer{
+  display: flex;
+  align-items: center;
+  min-height: 115px;
+  padding: 0 30px;
+
+  background-color: #24142a;
+  color: #fff;
+  .copyrighted{
+    width: 25%;
+    opacity: .7;
+  }
+  .social{
+    display: flex;
+    justify-content: center;
+    width: 50%;
+  }
+  .link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+
+    //border: solid 1px #432d30;
+    font-size: 14px;
+    border: solid 1px #4f1c23;
+    border-radius: 50px;
+    color: #fff;
+    & + .link{
+      margin-left: 10px;
+    }
+  }
+  span{
+    width: 25%;
+    text-align: end;
+  }
+}
+
+
 @import "mediaqueri";
 @import "../libs/slick.js/slick";
 
