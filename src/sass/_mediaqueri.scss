@@ -59,7 +59,7 @@
   }
 
   .tom-main {
-    min-height: 1024px;
+    min-height: 768px;
     margin-bottom: 70px;
     .header-content {
       padding: 0;
@@ -74,6 +74,7 @@
     }
   }
   .menu-icon{
+    display: inline-block;
     position: absolute;
     right: 23px;
     top: 48px;;
@@ -85,16 +86,27 @@
 
   // Header
   header {
-    position: absolute;
+    position: fixed;
     background-color: #fff;
     width: 100%;
-    min-height: 100vh;
-    right: -100%;
+    top: 0;
+    right: -2000px;
+    height: 100vh;
+
     z-index: 2;
+    transition: $trEase;
+    opacity: 0;
+    &.open{
+      right: 0;
+      opacity: 1;
+      overflow-y: scroll;
+      overflow-x: hidden;
+    }
     .closed-icon{
+      display: inline-block;
       position: absolute;
-      right: 20px;
-      top: 20px;
+      right: 26px;
+      top: 46px;
       width: 30px;
       height: 30px;
       background-repeat: no-repeat;
@@ -102,19 +114,28 @@
     }
     .logo{
       align-self: end;
+      .mob-logo{
+        margin-top: 18px;
+        margin-bottom: 39px;
+      }
+    }
+    .desc-logo{
+      display: none;
     }
     .top-menu {
       flex-direction: column;
     }
     nav {
       width: 100%;
+      margin-bottom: 27px;
       border-bottom: solid 1px #f4f2ef;
       text-align: center;
       ul {
         flex-direction: column;
       }
       .link {
-        margin-bottom: 30px;
+        margin-bottom: 47px;
+
         & + .link {
           margin-left: 0;
         }
@@ -125,10 +146,17 @@
     }
 
     .chang-lang{
+      margin-bottom: 40px;
       .link{
         a{
           color: #000;
         }
+      }
+    }
+    .fb-btn {
+      margin-bottom: 35px;
+      .btn{
+        padding: 14px;
       }
     }
   }
@@ -265,7 +293,7 @@
 
   // Header
   .tom-main{
-    min-height: 570px;
+    min-height: 320px;
     margin-bottom: 40px;
     .header-content{
       padding: 0 24px;
@@ -297,7 +325,6 @@
           padding: 48px 0 0 0px;
         }
       }
-
       .img{
         width: 100%;
         height: 205px;
@@ -306,7 +333,7 @@
       .content{
         width: 100%;
         margin: -20px 24px 0 24px;
-        min-height: auto;
+        min-height: 100%;
         background: #fff;
         border: none;
         z-index: 2;

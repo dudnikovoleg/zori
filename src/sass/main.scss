@@ -45,12 +45,14 @@ body{
   font-size: 12px;
   font-family: $mainFont;
   overflow-x: hidden;
+  &.open{
+    overflow: hidden;
+  }
 }
 
 .content-wrap{
   width: 1218px;
   margin: 0 auto;
-  //overflow: hidden;
 }
 
 
@@ -147,12 +149,80 @@ body{
 }
 /*  $Header
 ---------------------------------*/
+
+.closed-icon,
+.menu-icon{
+  display: none;
+}
+
+
+@-webkit-keyframes down-move
+{
+  0% {
+    opacity: 0;
+    top: -200px;
+  }
+  100% {
+    opacity: 1;
+    top:0;
+  }
+}
 header{
+  &.fixed{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    background-color: #fff;
+    animation: down-move  .6s alternate ease-in-out;
+    z-index: 99;
+    .logo{
+      width: 8%;
+      img{
+        margin: 17px 0;
+      }
+    }
+    .chang-lang .link a {
+      color: #000;
+    }
+    .desc-logo{
+      display: none;
+    }
+    .mob-logo{
+      display: inline-block;
+    }
+    .top-menu{
+      width: 1218px;
+      margin: 0 auto;
+    }
+    nav {
+      margin: 0 47px 0 33px;
+      .link {
+        a {
+          color: #000;
+        }
+      }
+    }
+    .btn {
+      border: solid 1px #c29749;
+      &:hover{
+        background-color: $accentCol;
+        color: #fff;
+      }
+      .letter {
+        display: none;
+      }
+    }
+  }
+
+
   .top-menu{
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
+
+
+
 
   /*-- Logo --*/
   .logo{
@@ -456,6 +526,7 @@ header{
         width: 25%;
         display: flex;
         align-items: center;
+        cursor: pointer;
       }
       .chart{
         position: relative;
