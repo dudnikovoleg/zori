@@ -11,38 +11,11 @@
 
 
         (function () {
-            // var chechScroll = true;
-            
             $(".trigger-down").click(function () {
                 $('html, body').animate({
                     scrollTop: $("#elementtoScrollToID").offset().top - 133
                 }, 1500);
             });
-
-
-            // $(window).on('scroll ', function (e) {
-            //
-            //     var scrollTopVal = $(window).scrollTop();
-            //
-            //     if ( scrollTopVal > 1 && chechScroll ) {
-            //         e.stopPropagation();
-            //
-            //         $('html, body').animate({
-            //             scrollTop: $("#elementtoScrollToID").offset().top - $('.top-menu').height() - 45
-            //         }, 1500);
-            //         chechScroll = false;
-            //     }
-            //
-            //     if( scrollTopVal === 0 &&   scrollTopVal < 100){
-            //         chechScroll = true;
-            //     }
-            //     e.preventDefault();
-            //
-            //     return chechScroll;
-            //
-            //
-            // })
-
         })();
 
 

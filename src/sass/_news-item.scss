@@ -1,0 +1,63 @@
+/* Table of contents
+
+    Use (CMD/CRL + F $[SECTION] to quickly find what you are looking for [SECTION])
+
+
+1.  News item
+
+*/
+
+
+/* $News item
+--------------------------*/
+
+.news-item{
+  margin-top: 50px;
+  padding: 0 160px;
+  img{
+    display: block;
+    max-width:100%;
+    margin: 0 auto;
+  }
+  .content-header{
+    margin-bottom: 48px;
+    padding: 0 50px;
+    font-size: 2.25rem;
+    line-height: 1.35;
+  }
+  p{
+    margin: 28px 0;
+    padding: 0 50px;
+    font-size: 1.15rem;
+  }
+  time{
+    padding: 0 50px;
+    color: #777777;
+  }
+  p:first-of-type:first-letter
+  {
+    font-size: 120px;
+    float: left;
+    line-height: 0.85em;
+    margin-left: -7px;
+    margin-bottom: -15px;
+    position: relative;
+  }
+
+  .long-arrow{
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 65px 50px 80px 50px;
+    letter-spacing: 3px;
+    color: $accentCol;
+  }
+}
+
+.border{
+  width: 100%;
+  border-top: solid 1px #f4f2ef;
+}
+
+.short-news-list{
+  margin-top: 40px;
+}

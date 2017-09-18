@@ -1,0 +1,54 @@
+/* Table of contents
+
+    Use (CMD/CRL + F $[SECTION] to quickly find what you are looking for [SECTION])
+
+
+1. News-list
+
+
+*/
+
+
+/* $News-list
+------------------------------*/
+
+.news-list{
+  display: flex;
+  margin-top: 80px;
+  margin-left: -50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  li{
+    display: inline-block;
+    width: 25%;
+    margin-bottom: 67px;
+    padding-left: 50px;
+  }
+  a {
+    display: block;
+     &:hover {
+       .content-header {
+         color: $accentCol;
+       }
+     }
+   }
+
+  .img{
+    width: 100%;
+    margin-bottom: 10px;
+    padding-top: 70%;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  time{
+    color: #777777;
+  }
+  .content-header{
+    margin-top: 10px;
+    font-size: 1.52rem;
+    color: #000;
+  }
+}
