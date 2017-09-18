@@ -15,7 +15,7 @@
             
             $(".trigger-down").click(function () {
                 $('html, body').animate({
-                    scrollTop: $("#elementtoScrollToID").offset().top - $('.top-menu').height() - 45
+                    scrollTop: $("#elementtoScrollToID").offset().top - 133
                 }, 1500);
             });
 
@@ -118,7 +118,7 @@
         (function () {
             $('#mainSlider').slick({
                 infinite: true,
-                // autoplay: true,
+                autoplay: true,
                 dots: true,
                 arrows: false,
                 autoplaySpeed: 5000,
